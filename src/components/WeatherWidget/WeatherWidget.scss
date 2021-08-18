@@ -1,0 +1,23 @@
+@use '../../styles/variables';
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.c-weather-widget {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 10px;
+  font-family: variables.$text-font-family;
+  color: variables.$text-color;
+  font-size: variables.$text-font-size;
+
+  &__button {
+    position: absolute;
+    margin-left: 205px;
+  }
+
+  .c-city:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+$row-height: 25px;
+
+.c-city {
+  display: grid;
+  grid-template:
+    "name name"
+    "icon temperature"
+    "description description"
+    "wind pressure"
+    "humidity visibility";
+  grid-template-rows: 1fr 70px auto $row-height $row-height $row-height;
+  grid-template-columns: auto;
+  min-height: 192px;
+
+  &__name {
+    grid-area: name;
+    align-self: center;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__icon {
+    grid-area: icon;
+    justify-self: end;
+    align-self: center;
+    width: 75px;
+  }
+
+  &__temperature {
+    grid-area: temperature;
+    justify-self: start;
+    align-self: center;
+    font-size: 31px;
+  }
+
+  &__description {
+    grid-area: description;
+    align-self: center;
+    line-height: $row-height;
+  }
+
+  &__wind {
+    grid-area: wind;
+    align-self: center;
+    display: flex;
+
+    .material-icons {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  }
+
+  &__pressure {
+    grid-area: pressure;
+    align-self: end;
+    justify-self: start;
+    display: flex;
+
+    .material-icons {
+      font-size: 16px;
+      margin-right: 5px;
+    }
+  }
+
+  &__humidity {
+    grid-area: humidity;
+    align-self: center;
+  }
+
+  &__visibility {
+    grid-area: visibility;
+    align-self: center;
+  }
+}
+
+.c-city--loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

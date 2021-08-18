@@ -1,0 +1,61 @@
+@use '../../styles/variables';
+
+.c-settings {
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__list {
+    margin-top: 10px;
+  }
+
+  &__add-location {
+    margin-top: 25px;
+
+    form {
+      .c-settings__add-location-label {
+        font-weight: 500;
+      }
+
+      .c-settings__add-location-field {
+        display: flex;
+        margin-top: 5px;
+
+        .c-settings__add-location-input {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.c-settings__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: default;
+  user-select: none;
+  background-color: #f5f5f5;
+  padding: 5px;
+  font-family: variables.$text-font-family;
+  color: variables.$text-color;
+  font-size: variables.$text-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .c-settings__item-icon {
+    cursor: move;
+  }
+
+  .c-settings__item-text {
+    margin-left: 10px;
+    flex-grow: 1;
+  }
+
+  .c-settings__item-remove-button {
+    margin-left: 10px;
+  }
+}
