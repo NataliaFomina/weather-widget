@@ -20,29 +20,28 @@ const MODE_SETTINGS = "settings";
 const WeatherWidget: FC<Props> = () => {
   const [data, setData] = useState<City[]>([]);
   const [mode, setMode] = useState<string>(MODE_VIEW);
-  console.log(mode)
+  console.log(mode);
 
   useEffect(() => {
     const config = loadConfig();
     if (config) {
       const cities: City[] = [];
       config.refs.forEach((el, i) => {
-        fetchCityByName(`${el.city}, ${el.country}`)
-          .then((city: City) => {
-            cities.splice(i, 0, city);
-            setData([...cities]);
-          });
+        fetchCityByName(`${el.city}, ${el.country}`).then((city: City) => {
+          cities.splice(i, 0, city);
+          setData([...cities]);
+        });
       });
     } else if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(function(position) {
+      navigator.geolocation.getCurrentPosition(function (position) {
         fetchCityByGeolocation({
           latitude: position.coords.latitude,
-          longitude: position.coords.longitude
+          longitude: position.coords.longitude,
         }).then((city: City) => {
           setData([city]);
           saveConfig(
             Object.assign({}, loadConfig(), {
-              refs: citiesToReferences([city])
+              refs: citiesToReferences([city]),
             })
           );
         });
@@ -81,7 +80,7 @@ const WeatherWidget: FC<Props> = () => {
                 setData(newData);
                 saveConfig(
                   Object.assign({}, loadConfig(), {
-                    refs: citiesToReferences(newData)
+                    refs: citiesToReferences(newData),
                   })
                 );
               }}

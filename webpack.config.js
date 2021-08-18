@@ -12,7 +12,7 @@ module.exports = {
     contentBase: outputDir,
     writeToDisk: true,
   },
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -36,6 +36,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
-  }
+    extensions: [".tsx", ".ts", ".js"],
+  },
 };

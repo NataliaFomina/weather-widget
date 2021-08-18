@@ -10,9 +10,11 @@ interface Props {
 const View: FC<Props> = ({ cities }) => {
   return (
     <div className="c-view">
-      {cities.map((el) => (<Card key={el.id} city={el} />))}
+      {cities.map((el) => (
+        <Card key={el.id} city={el} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default View;

@@ -12,8 +12,8 @@ function fetchCityByName(name: string): Promise<City> {
         params: {
           q: name,
           appId: APP_ID,
-          units: "metric"
-        }
+          units: "metric",
+        },
       })
       .then((response: any) => {
         resolve(responseDataToCity(response.data));
@@ -32,8 +32,8 @@ function fetchCityByGeolocation(geolocation: Geolocation) {
           lat: geolocation.latitude,
           lon: geolocation.longitude,
           appId: APP_ID,
-          units: "metric"
-        }
+          units: "metric",
+        },
       })
       .then((response: any) => {
         resolve(responseDataToCity(response.data));
@@ -56,23 +56,23 @@ function responseDataToCity(data: any): City {
     id: data["id"],
     name: data["name"],
     sys: {
-      country: data["sys"]["country"]
+      country: data["sys"]["country"],
     },
     weather: {
       main: data["weather"][0]["main"],
       description: toUpper(data["weather"][0]["description"]),
-      icon: data["weather"][0]["icon"]
+      icon: data["weather"][0]["icon"],
     },
     main: {
       temp: Math.round(data["main"]["temp"]),
       feelsLike: Math.round(data["main"]["feels_like"]),
       pressure: data["main"]["pressure"],
-      humidity: data["main"]["humidity"]
+      humidity: data["main"]["humidity"],
     },
     wind: {
-      speed: data["wind"]["speed"]
+      speed: data["wind"]["speed"],
     },
-    visibility: data["visibility"] / 1000
+    visibility: data["visibility"] / 1000,
   };
 }
 

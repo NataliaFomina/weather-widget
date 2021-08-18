@@ -18,7 +18,7 @@ interface Props {
 const Settings: FC<Props> = ({ cities, onCitiesChanged }) => {
   const [data, setData] = useState([]);
   const formSchema = Yup.object().shape({
-    location: Yup.string()
+    location: Yup.string(),
   });
 
   useEffect(() => {

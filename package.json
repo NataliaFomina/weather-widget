@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --config webpack.config.js --mode production",
-    "start": "webpack serve --config webpack.config.js --mode development --progress"
+    "start": "webpack serve --config webpack.config.js --mode development --progress",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "7.15.0",
@@ -12,6 +13,7 @@
     "@types/react": "17.0.16",
     "babel-loader": "8.2.2",
     "css-loader": "6.2.0",
+    "husky": "7.0.1",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
     "sass": "1.37.5",
